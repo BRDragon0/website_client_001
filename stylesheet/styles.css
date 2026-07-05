@@ -1,0 +1,251 @@
+/*ANCHOR Variables*/
+:root{
+    /*Main theme*/
+    --fg-colour: #000000;
+    --bg-colour: #FFFFFF;
+    --trim-fg-colour: #FFFFFF;
+    --trim-bg-colour: #000000;
+    --trim-1-colour: #AA2222;
+
+    --posX-optionsFilm: 0px;
+    --spd-scrollingFilm: 20s;
+}
+
+.mainBody{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.topBar{
+    height: 80px;
+    width: 100%;
+    margin: 0px;
+    background-color: var(--trim-bg-colour);
+    color: var(--trim-fg-colour);
+}
+
+.scrollingText{
+    margin: 0px;
+}
+
+.btn_filmRoll{
+    width: 100px;
+
+}
+
+.img_filmRoll{
+    width: 100%;
+}
+
+.img_selectionFilm{
+    width: 500px;
+}
+
+#selectionAnimator{
+    position: fixed;
+    top: calc(50% - 40px);
+    left: calc(50% - 700px + var(--posX-optionsFilm));
+}
+
+.btn_filmRoll{
+    width: 100px;
+    height: 66px;
+    position: absolute;
+    top: 17px;
+    font-size: large;
+}
+
+.btn_img{
+    cursor: pointer;
+    position: absolute;
+}
+
+.btn_img input[type="checkbox"]{
+    display: none;
+}
+
+.btn_img button{
+    display: none;
+}
+
+.btn_img img{
+    width: 100%;
+}
+
+
+
+.filmCover{
+    width: 500px;
+    height: 100px;
+    position: fixed;
+    left: calc(50% - 700px);
+    top: calc(50% - 40px);
+    background-color: var(--bg-colour);
+}
+
+/*Top and bottom scrolling*/
+
+.scrollFrame{
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    animation: frames_loopingFilm var(--spd-scrollingFilm) linear infinite normal forwards;
+}
+
+.img_bar_frame{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.bar_galleryCover{
+    width: 98px;
+    height: 66px;
+    position: absolute;
+    top: 17px;
+    left: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_bar_gallery{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    position: absolute; 
+    opacity: 0.7;
+}
+
+@keyframes frames_loopingFilm{
+    0%   {left:  100% ; top:   0%;}
+    50%  {left: -100px; top:   0%;}
+    51%  {left: -100px; top: calc(100% - 100px);}
+    100% {left:  100% ; top: calc(100% - 100px);}
+}
+
+
+
+/*Work page*/
+
+/*Gallery*/
+#mainGallery{
+    padding: 10px;
+    position: absolute;
+}
+
+.galleryRow{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.galleryImg{
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--trim-1-colour);
+}
+
+.sizeLimit{
+    width: 90%;
+    height: 90%;
+    margin: 10px;
+}
+
+.sizeLimit label, img{
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+}
+
+/*View Mode*/
+#viewImg{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    position: relative;
+}
+
+.areaCover{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0.5;
+    background-color: #000000;
+}
+
+.boundImg{
+    width: calc(53vw + 22px);
+    height: calc(80vh + 22px);
+    position: absolute;
+    left: 6%;
+    top: 10%;
+}
+
+.boundImg img{
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+}
+
+.boundDet{
+    width: 29vw;
+    height: calc(80vh + 22px);
+    position: fixed;
+    left: 57%;
+    top: 10%;
+    background-color: #FFFFFF;
+}
+
+.boundDet p{
+    overflow-wrap: break-word;
+    font-size: 18px;
+    font-family: monospace;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
+}
+
+.boundDet p span{
+    font-weight: bold;
+    overflow-wrap: break-word;
+}
+
+/*Text boxes*/
+.tm_0{width: 100%; height: 44px; margin-left: 8px;}
+.tm_1{width: 100%; height: 176px; margin-left: 8px;}
+.tm_2{width: 100%; height: 176px; margin-left: 8px;}
+.tm_3{width: 100%; height: 22px; margin-left: 8px;}
+
+@media (max-width: 800px){
+    .mainBody{
+        height: calc(100vh + 316px + 10px);
+    }
+    .boundImg{
+        width: 80vw;
+        height: calc(80vh);
+        position: absolute;
+        left: calc(50vw - (80vw / 2));
+        top: 57vh;
+    }
+    .boundDet{
+        width: 80vw;
+        height: 316px;
+        position: absolute;
+        left: 10vw;
+        top: 40px;
+    }
+    /*Text boxes*/
+    .tm_0{width: 90%; height: 22px; margin-left: 8px;}
+    .tm_1{width: 90%; height: 88px; margin-left: 8px;}
+    .tm_2{width: 90%; height: 66px; margin-left: 8px;}
+    .tm_3{width: 90%; height: 22px; margin-left: 8px;}
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheet/styles.css">
+    <title>Main page</title>
+</head>
+<body class="mainBody">
+    <div id="scrollingBars">
+        <div class="scrollFrame" style="animation-delay: 0s;">
+            <img class="img_bar_frame" src="assets/filmFrame.png">
+            <div class="bar_galleryCover">
+                <img class="img_bar_gallery" src="assets/gallery/Copy of DJI_0006.jpg">
+            </div>
+        </div>
+    </div>
+    <div class="middleSection">
+
+        <div id="selectionAnimator">
+            <button class="btn_filmRoll" style="left: 100px;" onclick="window.location.href='work.html';">
+                Work
+            </button>
+            <button class="btn_filmRoll" style="left: 200px;">
+                About
+            </button>
+            <button class="btn_filmRoll" style="left: 300px;">
+                Booking
+            </button>
+            <button class="btn_filmRoll" style="left: 400px;">
+                Q&A
+            </button>
+            <img class="img_selectionFilm" src="assets/filmFrame5.png" alt="select page options">
+        </div>
+
+        <div class="filmCover">
+        </div>
+
+        <label class="btn_img" style="width: 100px; top: calc(50% - 100px);left: calc(50% - 260px);">
+            <input id="togl_trig_options" type="checkbox" autocomplete="off" onclick="togl_trig_activate()">
+            <img class="img_filmRoll" src="assets/200FilmRoll.png" alt="toggle page selection">
+        </label>
+
+    </div>
+    <div class="bottomBar">
+
+    </div>
+</body>
+<script src="javascript/openFilm.js"></script>
+<script src="javascript/scrollingFilm.js" type="module"></script>
+</html>
